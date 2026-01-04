@@ -1,3 +1,4 @@
+-e git+https://github.com/alihamza-cs/churnguard.git@d32dab0933bf4d238b949ed1c9fc63f032dc25b6#egg=churnguard
 contourpy==1.3.3
 cycler==0.12.1
 fonttools==4.61.1
