@@ -2,27 +2,26 @@
 
 Predict customer churn using machine learning and explain *why* customers are likely to leave.
 
-## Project Status
-🚧 In progress — building an end-to-end ML pipeline
+---
 
-## Goals
-- Build a clean, reproducible machine learning pipeline
-- Train and evaluate baseline and improved models
-- Add explainability to support decision-making
-- Demonstrate good software engineering practices
+## Project Overview
 
-## Planned Tech Stack
+ChurnGuard is an end-to-end machine learning system for predicting customer churn using real-world tabular data.  
+The project covers the full ML lifecycle — from data preprocessing and model evaluation to deployment as a FastAPI service for live inference.
+
+The goal is to demonstrate practical machine learning, responsible evaluation, and production-style software engineering.
+
+---
+
+## Tech Stack
+
 - Python
 - Pandas, NumPy, scikit-learn
-- Matplotlib / Seaborn
+- FastAPI
+- Matplotlib
 - Git
 
-## Roadmap
-- [ ] Data ingestion & cleaning  
-- [ ] Baseline model (logistic regression)  
-- [ ] Model evaluation (ROC-AUC, F1)  
-- [ ] Feature importance & explainability  
-- [ ] Inference script  
+---
 
 ## Results
 
@@ -39,6 +38,19 @@ Predict customer churn using machine learning and explain *why* customers are li
 ![Permutation importance](reports/figures/permutation_importance_top15.png)
 
 **Notes**
-- Leakage columns (e.g. *Churn Reason*, *Churn Score*) were removed to ensure fair evaluation.
-- ROC-AUC and F1 were chosen due to class imbalance.
-- Gradient Boosting achieved the strongest overall discrimination.
+- Leakage-prone columns (e.g. *Churn Reason*, *Churn Score*) were removed to ensure fair evaluation.
+- ROC-AUC and F1 were selected due to class imbalance.
+- Gradient Boosting achieved the strongest overall discrimination performance.
+
+---
+
+## 🚀 API Usage (FastAPI)
+
+This project includes a FastAPI service for running live churn predictions using the trained model.
+
+### 1. Set up environment
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .\.venv\Scripts\activate
+pip install -r requirements.txt
+pip install -e .
