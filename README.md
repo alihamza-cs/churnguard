@@ -24,3 +24,21 @@ Predict customer churn using machine learning and explain *why* customers are li
 - [ ] Feature importance & explainability  
 - [ ] Inference script  
 
+## Results
+
+| Model | ROC-AUC | F1 |
+|---|---:|---:|
+| Logistic Regression (baseline) | 0.835 | 0.573 |
+| Random Forest | 0.834 | 0.586 |
+| Gradient Boosting | **0.854** | 0.584 |
+
+### Baseline Confusion Matrix
+![Baseline confusion matrix](reports/figures/baseline_confusion_matrix.png)
+
+### Feature Importance (Permutation Importance)
+![Permutation importance](reports/figures/permutation_importance_top15.png)
+
+**Notes**
+- Leakage columns (e.g. *Churn Reason*, *Churn Score*) were removed to ensure fair evaluation.
+- ROC-AUC and F1 were chosen due to class imbalance.
+- Gradient Boosting achieved the strongest overall discrimination.
